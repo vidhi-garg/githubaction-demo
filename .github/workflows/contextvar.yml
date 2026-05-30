@@ -1,0 +1,17 @@
+name: testingg context variable
+
+on:
+ workflow_dispatch
+
+env:
+ cloud: "azure-cloud"
+ 
+jobs:
+ testing-context_var:
+  runs-on: ubuntu-latest
+  steps: 
+   - name: "checking context variable"
+     run: |
+      echo "Repository name ${{github.repository}}"
+      echo "Workflow name ${{github.workflow}}"
+      echo "triggered by ${{github.triggering_actor}}"
