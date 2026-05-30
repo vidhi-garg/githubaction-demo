@@ -1,0 +1,17 @@
+name: configuration_var
+
+on: workflow_dispatch
+
+env:
+ cloud: "Azure_cloud"
+ 
+jobs:
+ greetng_job:
+  runs-on: ubuntu-latest
+  env:
+   greeting: "hello"
+  steps:
+   - name: "say hello to vidhi" 
+     run: echo "$first_name is using $cloud with project_id ${{vars.PROJECT_ID}}"
+     env:
+      first_name: "Vidhi"
